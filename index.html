@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de Paiement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            background: white !important;
+            margin-bottom: 15px;
+        }
+
+        .header img {
+            max-width: 100px;
+        }
+
+        .icon-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon {
+            background: #f1f1f1;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon img {
+            width: 50%;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #f57c00;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 15px;
+            text-align: left;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin: 8px 0;
+        }
+
+        .content span {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .cta {
+            margin-top: 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #f57c00;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+
+        .cta a:hover {
+            background-color: #e05500;
+        }
+
+        .footer {
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-icons img {
+            height: 32px;
+            width: auto;
+        }
+
+        .social-icons p {
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <img src="https://via.placeholder.com/120" alt="FeexPay Logo">
+    </div>
+    <div class="icon-title">
+        <div class="icon">
+            <img src="https://via.placeholder.com/70" alt="Confirmation Icon">
+        </div>
+        <div class="title">Paiement effectué</div>
+    </div>
+    <div class="content">
+        <p><span>Nom et Prénoms :</span> {{nom_prenoms}}</p>
+        <p><span>Montant payé :</span> {{montant_paye}} FCFA</p>
+        <p><span>Destinataire :</span> {{destinataire}}</p>
+        <p>Avec FeexPay, acheter ou vendre en ligne devient encore plus facile, plus rapide et moins coûteux.</p>
+    </div>
+    <div class="cta">
+        <a href="{{url_facture}}" target="_blank">Télécharger la facture</a>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="social-icons">
+                <img src="https://via.placeholder.com/32" alt="Réseaux sociaux">
+                <p>@feexpay</p>
+            </div>
+            <div class="contact-info">
+                <p>contact@feexpay.me</p>
+                <p>support@feexpay.me</p>
+                <p><strong>+229 0197 43 0303</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

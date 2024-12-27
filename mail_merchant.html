@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de Paiement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #112c56 !important;
+        }
+
+        .container {
+            /*max-width: 400px;*/
+            margin: 5% 5%;
+            background: #faf9f7;
+            /*border-radius: 15px;*/
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            /*padding: 20px;*/
+            /*text-align: center;*/
+        }
+
+        .header {
+            margin: 5% 5%;
+            background: white !important;
+            /*margin-bottom: 15px;*/
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: inline;
+            align-items: center;
+            justify-content: flex-start;
+            /*padding: 10px 20px;*/
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 10px 20px;
+        }
+
+        .header p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .header-left img {
+            max-width: 100%;
+        }
+
+        .header-right img {
+            max-width: 25%;
+        }
+
+        .icon {
+            background: #dddddd;
+            /*border: 2px solid white;*/
+            padding-top: 5%;
+            text-align: center;
+        }
+
+        .icon img {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #D45D00 !important;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 14px;
+            text-align: left;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .content p {
+            margin: 8px 0;
+        }
+
+        .content span {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .cta {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 3% 28%;
+            background-color: #D45D00 !important;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .cta a:hover {
+            background-color: #D45D00;
+        }
+
+        .footer {
+            margin: 5% 5%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .social-icons {
+            display: inline;
+            gap: 5px;
+        }
+
+        .social-icons img {
+            height: 32px;
+            width: auto;
+        }
+
+        .social-icons p {
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .border {
+            border: 2px solid white;
+            background: white;
+        }
+        .border-radius {
+            /*border: 5px solid white;*/
+            border-radius: 5% 5% 5% 5%;
+        }
+    </style>
+</head>
+<body>
+<div class="">
+    <div class="header">
+        <div class="header-left">
+            <img src="https://api.feexpay.me/api/static/Logo_FeexPay.svg" alt="FeexPay Logo">
+            <p>Rapidité - Sécurité - Fiabilité</p>
+        </div>
+
+        <div class="header-right">
+            <img src="icon_download_mail_merchant.png" alt="FeexPay Logo">
+        </div>
+    </div>
+
+    <div style="background-color: #dddddd; padding-top: 5%; padding-bottom: 5%">
+        <div style="border-radius: 5% 5% 5% 5%;" class="container">
+            <div class="border border-radius">
+                <div class="icon" style="border: 3px solid white; border-radius: 5% 5% 0 0;">
+                    <img src="check_icon_mail_confirmation.png" alt="Confirmation">
+                </div>
+            </div>
+
+            <div class="border border-radius" style="padding: 5% 20% 3% 5%;">
+                <div class="title">Paiement effectué</div>
+                <div class="content">
+                    <p>Nom et Prénoms :<br><span>{{name}}</span></p>
+                    <p>Montant payé :<br><span>{{amount}} {{#if currency}} {{currency}} {{else}} FCFA {{/if}}</span></p>
+                    <p>Destinataire :<br><span>{{shop_name}}</span> </p>
+                    <p>Avec FeexPay, acheter ou vendre en ligne devient encore plus facile, plus rapide et moins coûteux.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <a href="{{url_facture}}" target="_blank" data-saferedirecturl="https://www.google.com/url?q={{url_facture}}" rel="noreferrer noopener">Télécharger la facture</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="social-icons">
+                <img src="social_network.png" alt="Réseaux sociaux">
+                <p>@feexpay</p>
+            </div>
+            <div class="contact-info">
+                <a style="text-decoration: none; color: #112c56;" href="mailto:contact@feexpay.me"><p>contact@feexpay.me</p></a>
+                <a style="text-decoration: none; color: #112c56;" href="mailto:support@feexpay.me"><p>support@feexpay.me</p></a>
+                <a style="text-decoration: none; color: #112c56;" href="https://wa.me//+2290197430303" target="_blank"><p style="font-weight: bolder;"><strong>+229 0197 43 0303</strong></p></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

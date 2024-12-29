@@ -25,27 +25,20 @@
         }
 
         .header {
-            margin: 5% 5%;
-            background: white !important;
+            /*margin: 5% 5%;*/
+            /*background: white !important;*/
             /*margin-bottom: 15px;*/
             display: flex;
-            justify-content: space-between;
+            /*justify-content: space-between;*/
             align-items: center;
             flex-wrap: wrap;
         }
 
         .header-left {
-            display: inline;
+            /*display: inline;*/
             align-items: center;
-            justify-content: flex-start;
+            /*justify-content: flex-start;*/
             /*padding: 10px 20px;*/
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 10px 20px;
         }
 
         .header p {
@@ -76,9 +69,17 @@
         .title {
             font-size: 18px;
             font-weight: bold;
-            color: #D45D00 !important;
+            color: #112c56 !important;
             text-transform: uppercase;
             margin-bottom: 20px;
+        }
+
+        .background {
+            background-image: url('background_mail_confirmation.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /*height: 300px;*/
         }
 
         .content {
@@ -167,38 +168,32 @@
 </head>
 <body>
 <div class="">
-    <div class="header">
-        <div class="header-left">
-            <img src="https://api.feexpay.me/api/static/Logo_FeexPay.svg" alt="FeexPay Logo">
-            <p>Rapidité - Sécurité - Fiabilité</p>
-        </div>
 
-        <div class="header-right">
-            <img src="icon_download_mail_merchant.png" alt="FeexPay Logo">
-        </div>
-    </div>
 
-    <div style="background-color: #dddddd; padding-top: 5%; padding-bottom: 5%">
+    <div class="background" style="padding-top: 5%; padding-bottom: 5%">
         <div style="border-radius: 5% 5% 5% 5%;" class="container">
             <div class="border border-radius">
                 <div class="icon" style="border: 3px solid white; border-radius: 5% 5% 0 0;">
-                    <img src="check_icon_mail_confirmation.png" alt="Confirmation">
+                    <div class="header">
+                        <div class="header-left">
+                            <img src="https://api.feexpay.me/api/static/Logo_FeexPay.svg" alt="FeexPay Logo">
+                            <p>Rapidité - Sécurité - Fiabilité</p>
+                        </div>
+                    </div>
+                    <img src="front_background_mail_confirmation.png" alt="Confirmation">
                 </div>
             </div>
 
             <div class="border border-radius" style="padding: 5% 20% 3% 5%;">
-                <div class="title">Paiement effectué</div>
+                <div class="title">Paiement Reçu</div>
                 <div class="content">
-                    <p>Nom et Prénoms :<br><span>{{name}}</span></p>
-                    <p>Montant payé :<br><span>{{amount}} {{#if currency}} {{currency}} {{else}} FCFA {{/if}}</span></p>
-                    <p>Destinataire :<br><span>{{shop_name}}</span> </p>
+                    <p>Vous avez reçu un paiement de <span>{{amount}} {{#if currency}} {{currency}} {{else}} FCFA {{/if}}</span> sur votre boutique <span>{{shop_name}}</span> de reference <span>{{reference}}</span>.</p> <br>
+<!--                    <p>Nom et Prénoms :<br><span>{{name}}</span></p>-->
+<!--                    <p>Montant payé :<br><span>{{amount}} {{#if currency}} {{currency}} {{else}} FCFA {{/if}}</span></p>-->
+<!--                    <p>Destinataire :<br><span>{{shop_name}}</span> </p>-->
                     <p>Avec FeexPay, acheter ou vendre en ligne devient encore plus facile, plus rapide et moins coûteux.</p>
                 </div>
             </div>
-        </div>
-
-        <div class="cta">
-            <a href="{{url_facture}}" target="_blank" data-saferedirecturl="https://www.google.com/url?q={{url_facture}}" rel="noreferrer noopener">Télécharger la facture</a>
         </div>
     </div>
 
